@@ -12,11 +12,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 find_package(Qt6 CONFIG REQUIRED Widgets DBus Concurrent QuickControls2)
 
-find_package(KF6WindowSystem QUIET)
-if(NOT KF6WindowSystem_FOUND)
-    message(STATUS "KF6WindowSystem not found, skipping lingmo-dock")
-    return()
-endif()
+find_package(KF6WindowSystem REQUIRED)
 
 set(SRCS
     src/applicationitem.h
